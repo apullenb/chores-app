@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { withRouter } from 'react-router-dom'
 import './loginForm.css';
 import TextInput from '../../textInput/textInput';
@@ -23,10 +23,16 @@ function LoginForm(props) {
   }
 
   return (
-    <form className="loginForm">
+    <form className="loginForm" action="POST" onSubmit={(e) => {
+      e.preventDefault();
+      props.history.push('/dashboard')
+    }
+    }
+    >
       <TextInput type={"email"} Validation={formValidation.emailValidation} placeholder={"Email"} name={"email"} getErrorFormInputFields={getErrorFormInputFields} />
       <TextInput type={"password"} Validation={formValidation.passwordValidation} placeholder={"Password"} name={"password"} getErrorFormInputFields={getErrorFormInputFields} />
-      <Button buttonName={'Login'} onclick={() => props.history.push('/dashboard')} background={"blue"} id="loginButton" isDisabled={disableButton}/>
+      <Button buttonName={'Login'} {...props}
+        background={"blue"} id="loginButton" isDisabled={disableButton} />
     </form>
   );
 }
