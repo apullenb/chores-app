@@ -1,0 +1,14 @@
+import React from 'react'
+
+
+function Button(props) {
+    return (
+        <React.Fragment>
+
+            <button id={props.id} onClick={(props.onclick)} style={{ width: props.width || '100%', height: props.height || "40px", padding: props.padding || "10px", background: props.background, borderRadius: "10px", border: "none" }} disabled={props.isDisabled} >{props.buttonName}</button>
+
+        </React.Fragment>
+    )
+}
+
+export default Button

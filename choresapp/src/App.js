@@ -26,7 +26,7 @@ class App extends React.Component {
 
             <Switch>
                 <Route exact path='/login' component={props => <Login {...props} />} />
-                <Route exact path='/landingpage' component={props => <LandingPage {...props} />} />
+                <Route exact path='/' component={props => <LandingPage {...props} />} />
                 <Route exact path='/signup' component={props => <Signup {...props} />} />
                 <Route exact path='/dashboard' component={props => <Dashboard {...props} />} />
                 <Route exact path='/homepage' component={props => <Homepage {...props} />} />

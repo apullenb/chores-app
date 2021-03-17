@@ -1,27 +1,34 @@
-import React, { useState } from "react";
-import "./loginForm";
-import { formValidation } from '../../../validations/formValidation'
+import React, { useState, useEffect, useRef } from "react";
+import { withRouter } from 'react-router-dom'
+import './loginForm.css';
+import TextInput from '../../textInput/textInput';
+import Button from '../../button/button';
+import { formValidation } from '../../../validations/formValidation';
 
-function LoginForm() {
-  const [emailError, setEmailError] = useState({ error: false, errorMessage: "" })
-  const [passwordError, setPasswordError] = useState({ error: false, errorMessage: "" })
-
-
-console.log(emailError)
+function LoginForm(props) {
+  const button = useRef();
+  let disableButton = true;
+  useEffect(() => {
+    button.current = document.getElementById('loginButton');
+  }, [])
+  const getErrorFormInputFields = (isError) => {
+    if (button.current) {
+      if (isError) {
+        button.current.disabled = true
+      }
+      else {
+        button.current.disabled = false
+      }
+    }
+  }
 
   return (
-    <form>
-      { emailError.error ? <label htmlFor="email">{emailError.errorMessage}</label> : <div />}
-      <input type="email" name="email" placeholder="Email" onBlur={(input) => {
-        setEmailError(formValidation.emailValidation(input))
-      }} />
-      { passwordError.error ? <label htmlFor="password">{passwordError.errorMessage}</label> : <div />}
-      <input type="password" placeholder="Password" onBlur={(input) => {
-        setEmailError(formValidation.passwordValidation(input))
-      }}  />
-      <button type='submit' > Login </button>
+    <form className="loginForm">
+      <TextInput type={"email"} Validation={formValidation.emailValidation} placeholder={"Email"} name={"email"} getErrorFormInputFields={getErrorFormInputFields} />
+      <TextInput type={"password"} Validation={formValidation.passwordValidation} placeholder={"Password"} name={"password"} getErrorFormInputFields={getErrorFormInputFields} />
+      <Button buttonName={'Login'} onclick={() => props.history.push('/dashboard')} background={"blue"} id="loginButton" isDisabled={disableButton}/>
     </form>
   );
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
