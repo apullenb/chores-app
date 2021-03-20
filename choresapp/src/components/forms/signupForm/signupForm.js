@@ -23,7 +23,7 @@ function SignupForm(props) {
         <form className="loginForm" action="POST" onSubmit={(e) => {
             e.preventDefault();
             props.history.push('/dashboard')
-        }}>
+        }}> 
             <TextInput type={"email"} Validation={formValidation.emailValidation} placeholder={"Email"} name="email" getErrorFormInputFields={getErrorFormInputFields} />
             <TextInput type={"password"} Validation={formValidation.passwordValidation} placeholder={"Password"} name="password" getErrorFormInputFields={getErrorFormInputFields} />
             <TextInput type={"password"} Validation={formValidation.confirmPassword} placeholder={"ConfirmPassword"} name="confirmPassword" getErrorFormInputFields={getErrorFormInputFields} />
