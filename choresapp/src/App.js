@@ -7,6 +7,7 @@ import Signup from './routes/signup/signup'
 import Dashboard from './routes/dashboard/dashboard'
 import Homepage from './routes/homepage/homePage'
 import "./App.css";
+import SuperAdminDash from './SuperAdminDash';
 
 class App extends React.Component {
 
@@ -30,6 +31,7 @@ class App extends React.Component {
                 <Route exact path='/signup' component={props => <Signup {...props} />} />
                 <Route exact path='/dashboard' component={props => <Dashboard {...props} />} />
                 <Route exact path='/homepage' component={props => <Homepage {...props} />} />
+                <Route exact path='/superAdminDash' component={props => <SuperAdminDash {...props} />} />
                 <Route   component={props=><div> <h1>Page Not found</h1> </div>} />
 
             </Switch>
