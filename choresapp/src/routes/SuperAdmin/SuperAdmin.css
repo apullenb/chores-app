@@ -1,14 +1,19 @@
 .section {
-    margin: 10px;
-    padding: 50px 4px; 
+    margin: 10px 35px;
+    padding: 5px 40px; 
     border: 1px solid gray;
 }
 
 .admin-Dash {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    background-color: rgb(54, 54, 54);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px;
+    margin: 4px;
 }
 
 .admin-form {
@@ -17,9 +22,11 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: 10px 50px;
-}
-.admin-form p {
+    margin: 10px 20px;
     font-size: 17px;
-    
+}
+.admin-form h3 {
+    font-size: 22px;
+    font-weight: 600;
+
 }

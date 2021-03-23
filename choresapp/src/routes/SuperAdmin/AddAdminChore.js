@@ -35,15 +35,15 @@ function AddAdminChore() {
     return (
         <div>
              <h3>Add New Chore Option:</h3>
-            <h4>Chore Title:</h4>
             <section className='admin-form'> 
+            Chore Title:
             <input type='text' name='title' onChange={(e) => onChange(e)} required />
             Chore Description: 
             <input type='text' name='description' onChange={(e) => onChange(e)} required />
             Chore Suggested Token Value: 
             <input type='text' name='value' onChange={(e) => onChange(e)} required />
             Steps to Complete Chore: 
-            <input type='text' name='steps' onChange={(e) => onChange(e)} required />
+            <textarea name='steps' rows="4" cols="50" onChange={(e) => onChange(e)} required />
             Estimated Time to Complete Chore: 
             <input type='text' name='time_est' onChange={(e) => onChange(e)} required />
             Suggested Age: 
