@@ -1,9 +1,11 @@
+<<<<<<< HEAD:choresapp/src/routes/superAdminDash/SuperAdminDash.js
 import React, { useState, useEffect } from 'react'
+=======
+import React, { useState } from 'react'
+>>>>>>> 8b3807823b7fc1fd5d46d44680ec9c3b457ebf5b:choresapp/src/routes/SuperAdmin/AddAdminChore.js
 import config from '../../config'
 
-function SuperAdminDash() {
-
-    const [allChores, setAllChores] = useState('')
+function AddAdminChore() {
     const [inputs, setInputs] = useState('')
     
     const { title, value, steps, description, time_est, suggested_age } = inputs;
@@ -34,47 +36,26 @@ function SuperAdminDash() {
         }
       };
 
-    async function getChoreOptions() {
-        try {
-          const response = await fetch(`${config.API_ENDPOINT}/api/superAdmin/chores`, {
-            method: "GET"
-          });
-          const parseRes = await response.json();
-          setAllChores(parseRes);
-         
-        } catch (error) {
-          console.error(error.message);
-        }
-      }
-    
-     
-      useEffect(() => {
-        getChoreOptions();
-      }, []);
-     
-
     return (
         <div>
-            <h1>Welcome SuperAdmin</h1>
-          Current Chores:
-         <h2>Title: {allChores && allChores[0].title }</h2>
-         <p>Description:{allChores && allChores[0].description }</p>
-            <h4>Add New Chore Option:</h4>
-            Chore Title: 
+             <h3>Add New Chore Option:</h3>
+            <section className='admin-form'> 
+            Chore Title:
             <input type='text' name='title' onChange={(e) => onChange(e)} required />
             Chore Description: 
             <input type='text' name='description' onChange={(e) => onChange(e)} required />
             Chore Suggested Token Value: 
             <input type='text' name='value' onChange={(e) => onChange(e)} required />
             Steps to Complete Chore: 
-            <input type='text' name='steps' onChange={(e) => onChange(e)} required />
+            <textarea name='steps' rows="4" cols="50" onChange={(e) => onChange(e)} required />
             Estimated Time to Complete Chore: 
             <input type='text' name='time_est' onChange={(e) => onChange(e)} required />
             Suggested Age: 
             <input type='text' name='suggested_age' onChange={(e) => onChange(e)} required />
             <button onClick={onSubmit}> Submit</button>
+            </section>
         </div>
     )
 }
 
-export default SuperAdminDash
+export default AddAdminChore

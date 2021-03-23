@@ -7,7 +7,11 @@ import Signup from './routes/signup/signup'
 import Dashboard from './routes/dashboard/dashboard'
 import Homepage from './routes/homepage/homePage'
 import "./App.css";
+<<<<<<< HEAD
 import SuperAdminDash from './routes/superAdminDash/SuperAdminDash';
+=======
+import SuperAdminDash from './routes/SuperAdmin/SuperAdminDash'
+>>>>>>> 8b3807823b7fc1fd5d46d44680ec9c3b457ebf5b
 
 class App extends React.Component {
 
