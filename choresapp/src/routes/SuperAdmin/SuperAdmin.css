@@ -1,4 +1,6 @@
 .section {
+    display: flex;
+    justify-content: space-around;
     margin: 10px 35px;
     padding: 5px 40px; 
     border: 1px solid gray;
@@ -22,11 +24,29 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin: 10px 20px;
-    font-size: 17px;
+    margin: 1px 20px;
+    font-size: 16px;
 }
 .admin-form h3 {
     font-size: 22px;
     font-weight: 600;
+}
 
+.chore-bank {
+    display: flex;
+    flex-direction: row;
+}
+
+.chore {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    margin: 0px;
+    padding: 2px 6px;
+    font-size: 14px;
+    max-width: 300px;
+}
+.chore p {
+    border-bottom: 1px dashed gray;
+    padding: 1px 1px;
 }
