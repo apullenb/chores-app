@@ -24,7 +24,7 @@ function SuperAdminDash() {
           },    
           body: JSON.stringify(body),
         });
-        console.log(JSON.stringify(body))
+        
         const parseRes = await response.json();
         if (parseRes.error) {
           alert(parseRes.error);
@@ -41,7 +41,7 @@ function SuperAdminDash() {
           });
           const parseRes = await response.json();
           setAllChores(parseRes);
-          console.log(allChores)
+         
         } catch (error) {
           console.error(error.message);
         }
@@ -56,7 +56,9 @@ function SuperAdminDash() {
     return (
         <div>
             <h1>Welcome SuperAdmin</h1>
-
+          Current Chores:
+         <h2>Title: {allChores && allChores[0].title }</h2>
+         <p>Description:{allChores && allChores[0].description }</p>
             <h4>Add New Chore Option:</h4>
             Chore Title: 
             <input type='text' name='title' onChange={(e) => onChange(e)} required />
