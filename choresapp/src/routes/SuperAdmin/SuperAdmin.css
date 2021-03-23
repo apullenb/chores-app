@@ -1,0 +1,25 @@
+.section {
+    margin: 10px;
+    padding: 50px 4px; 
+    border: 1px solid gray;
+}
+
+.admin-Dash {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 10px 50px;
+}
+.admin-form p {
+    font-size: 17px;
+    
+}

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import config from './config'
+import React, { useState } from 'react'
+import config from '../../config'
 
-function SuperAdminDash() {
-
-    const [allChores, setAllChores] = useState('')
+function AddAdminChore() {
     const [inputs, setInputs] = useState('')
     
     const { title, value, steps, description, time_est, suggested_age } = inputs;
@@ -34,33 +32,11 @@ function SuperAdminDash() {
         }
       };
 
-    async function getChoreOptions() {
-        try {
-          const response = await fetch(`${config.API_ENDPOINT}/api/superAdmin/chores`, {
-            method: "GET"
-          });
-          const parseRes = await response.json();
-          setAllChores(parseRes);
-         
-        } catch (error) {
-          console.error(error.message);
-        }
-      }
-    
-     
-      useEffect(() => {
-        getChoreOptions();
-      }, []);
-     
-
     return (
         <div>
-            <h1>Welcome SuperAdmin</h1>
-          Current Chores:
-         <h2>Title: {allChores && allChores[0].title }</h2>
-         <p>Description:{allChores && allChores[0].description }</p>
-            <h4>Add New Chore Option:</h4>
-            Chore Title: 
+             <h3>Add New Chore Option:</h3>
+            <h4>Chore Title:</h4>
+            <section className='admin-form'> 
             <input type='text' name='title' onChange={(e) => onChange(e)} required />
             Chore Description: 
             <input type='text' name='description' onChange={(e) => onChange(e)} required />
@@ -73,8 +49,9 @@ function SuperAdminDash() {
             Suggested Age: 
             <input type='text' name='suggested_age' onChange={(e) => onChange(e)} required />
             <button onClick={onSubmit}> Submit</button>
+            </section>
         </div>
     )
 }
 
-export default SuperAdminDash
+export default AddAdminChore
