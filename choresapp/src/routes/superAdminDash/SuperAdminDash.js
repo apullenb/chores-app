@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import config from './config'
+import config from '../../config'
 
 function SuperAdminDash() {
 

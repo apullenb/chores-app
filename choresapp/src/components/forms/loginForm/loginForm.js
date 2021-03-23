@@ -5,7 +5,11 @@ import TextInput from '../../textInput/textInput';
 import Button from '../../button/button';
 import { formValidation } from '../../../validations/formValidation';
 
+import {useDispatch} from 'react-redux';
+
 function LoginForm(props) {
+const dispatch = useDispatch();
+
   const button = useRef();
   let disableButton = true;
   useEffect(() => {
@@ -21,6 +25,16 @@ function LoginForm(props) {
       }
     }
   }
+  const login = ()=>{
+    dispatch({
+      type:"LoginUser",
+      payload:{
+        userId: 123123123,
+        email:"kidusyilma@gmail.com",
+        isAdmin: true
+      }
+    })
+  }
 
   return (
     <form className="loginForm" action="POST" onSubmit={(e) => {
@@ -31,7 +45,7 @@ function LoginForm(props) {
     >
       <TextInput type={"email"} Validation={formValidation.emailValidation} placeholder={"Email"} name={"email"} getErrorFormInputFields={getErrorFormInputFields} />
       <TextInput type={"password"} Validation={formValidation.passwordValidation} placeholder={"Password"} name={"password"} getErrorFormInputFields={getErrorFormInputFields} />
-      <Button buttonName={'Login'} {...props}
+      <Button buttonName={'Login'} {...props} onclick={login}
         background={"blue"} id="loginButton" isDisabled={disableButton} />
     </form>
   );

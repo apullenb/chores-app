@@ -7,7 +7,7 @@ import Signup from './routes/signup/signup'
 import Dashboard from './routes/dashboard/dashboard'
 import Homepage from './routes/homepage/homePage'
 import "./App.css";
-import SuperAdminDash from './SuperAdminDash';
+import SuperAdminDash from './routes/superAdminDash/SuperAdminDash';
 
 class App extends React.Component {
 
