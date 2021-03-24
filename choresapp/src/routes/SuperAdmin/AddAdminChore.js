@@ -1,8 +1,4 @@
-<<<<<<< HEAD:choresapp/src/routes/superAdminDash/SuperAdminDash.js
-import React, { useState, useEffect } from 'react'
-=======
 import React, { useState } from 'react'
->>>>>>> 8b3807823b7fc1fd5d46d44680ec9c3b457ebf5b:choresapp/src/routes/SuperAdmin/AddAdminChore.js
 import config from '../../config'
 
 function AddAdminChore() {
