@@ -9,7 +9,7 @@ function ParentLogin({ setAuth }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newLogin = { user_name: formHandleUser, password: formHandlePass };
+      const newLogin = { parent_username: formHandleUser, password: formHandlePass };
       const loginRequest = {
         method: "POST",
         headers: {
@@ -66,7 +66,13 @@ function ParentLogin({ setAuth }) {
         </label>
         <button onClick={handleSubmit}>Login</button>
       </form>{" "}
-      
+      <section>
+      <p> Need to Create an Account? </p>
+       <Link to={{ pathname: "/signup" }}>
+        {" "}
+        <button>Create Account</button>
+      </Link>{" "} 
+      </section>
     </div>
   );
 }

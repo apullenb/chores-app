@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import LoginForm from "../../components/forms/loginForm/loginForm";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login(props) {
   const [select, setSelect] = useState("");
   const [selectLink, setselectLink] = useState("");
 
