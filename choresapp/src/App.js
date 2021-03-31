@@ -8,7 +8,7 @@ import Dashboard from './routes/dashboard/dashboard'
 import Homepage from './routes/homepage/homePage'
 import "./App.css";
 import SuperAdminDash from './routes/SuperAdmin/SuperAdminDash'
-
+import ParentLogin from './routes/login/ParentLogin'
 class App extends React.Component {
 
     constructor() {
@@ -27,14 +27,16 @@ class App extends React.Component {
 
             <Switch>
                 <Route exact path='/login' component={props => <Login {...props} />} />
+                
                 <Route exact path='/' component={props => <LandingPage {...props} />} />
                 <Route exact path='/signup' component={props => <Signup {...props} />} />
                 <Route exact path='/dashboard' component={props => <Dashboard {...props} />} />
                 <Route exact path='/homepage' component={props => <Homepage {...props} />} />
                 <Route exact path='/superAdminDash' component={props => <SuperAdminDash {...props} />} />
-                <Route   component={props=><div> <h1>Page Not found</h1> </div>} />
-
+                <Route exact path="/parent-login" component={props => <ParentLogin {...props} />} />
+                {/* <Route   component={props=><div> <h1>Page Not found</h1> </div>} /> */}
             </Switch>
+            
 
 
         </div>);
