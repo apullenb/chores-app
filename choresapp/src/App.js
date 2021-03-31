@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import LandingPage from './routes/landingPage/landingPage'
 import Login from './routes/login/login'
-import Signup from './routes/signup/signup'
+import Signup from './routes/signup/ParentSignup'
 import Dashboard from './routes/dashboard/dashboard'
 import Homepage from './routes/homepage/homePage'
 import "./App.css";
