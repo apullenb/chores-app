@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import Button from '../../components/button/button';
 import { useDispatch } from 'react-redux'
 import config from '../../config'
+import AddChild from './AddChild'
 
 function Dashboard(props) {
     const [children, setChildren]= useState('')
@@ -30,7 +31,7 @@ useEffect(() => {
     return (
         <div>
             <h1>Dashboard</h1>
-            
+            <AddChild />
         </div>
     )
 }
