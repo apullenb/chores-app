@@ -9,7 +9,6 @@ import Homepage from './routes/homepage/homePage'
 import "./App.css";
 import SuperAdminDash from './routes/SuperAdmin/SuperAdminDash'
 
-
 class App extends React.Component {
 
     constructor() {

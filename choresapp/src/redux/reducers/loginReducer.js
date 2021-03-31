@@ -7,8 +7,19 @@ const initialState ={
 
 const  LoginReducer = (state = initialState, action)=>{
 
+    const {type,payload}= action
 
-    return state
+    switch(type){
+        case "LoginUser" :
+              return  {...state, ...payload}
+       case "LogOutUser":
+           return {...state,...payload}
+           default  : 
+           return state
+              
+    }
+
+
 }
 
 export default LoginReducer;
