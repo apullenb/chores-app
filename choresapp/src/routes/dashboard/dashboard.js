@@ -31,6 +31,11 @@ useEffect(() => {
     return (
         <div>
             <h1>Dashboard</h1>
+            <h3>Children:</h3>
+           {children && (<section><p>Name: {children[0].full_name}</p>
+            <p>Age: {children[0].age}</p>
+            <p>Tokens: {children[0].tokens}</p>
+            </section>)}
             <AddChild />
         </div>
     )
