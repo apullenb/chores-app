@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import config from '../../config'
 import AddChild from './AddChild'
 import ChildCard from '../../components/ChildCard';
+import './dashboard.css'
 
 function Dashboard(props) {
     const [parent, setParent] = useState(false)
@@ -49,8 +50,11 @@ useEffect(() => {
 
     return (
         <div className='parent-dashboard'>
-           <h1>Hello {parent.parent_name}</h1>
+           <section className='top'>
+           <h1>Hello {parent.parent_name}!</h1>
             <h2>DASHBOARD</h2>
+           </section>
+           
             <section className='children'>
             <h3>Children:</h3>
             <div className='child-cards'>

@@ -1,0 +1,25 @@
+
+.parent-dashboard {
+    margin: 1px 6%;
+}
+
+.parent-dashboard h1 {
+    color: var(--purple);
+    font-family: var(--funFont);
+    font-size: 45px;
+   
+}
+.parent-dashboard h2 {
+    font-family: var(--funFont);
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3px solid var(--yellow);
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px;
+}

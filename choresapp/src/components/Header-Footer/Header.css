@@ -1,4 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap');
 .header {
-    background-color: #6b036e;
+    background-color: var(--purple);
+    padding: 2% 
+}
+
+.header h1 {
+    color: whitesmoke;
+    font-family: 'Bellota Text';
+    font-size: 55px;
+    font-weight: 700;
 }
