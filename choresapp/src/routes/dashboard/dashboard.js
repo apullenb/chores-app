@@ -8,7 +8,7 @@ import AddChild from './AddChild'
 import ChildCard from '../../components/ChildCard';
 
 function Dashboard(props) {
-    const [children, setChildren]= useState('')
+    const [children, setChildren]= useState(false)
     const [show, setShow] = useState('hide')
 
     console.log(children)
@@ -25,20 +25,25 @@ function Dashboard(props) {
             console.error(error.message);
           }
         }
-    
+    const displayChildren = () => {
 
+    }
+    
 useEffect(() => {
     getChildren()
 }, [])
+
     return (
         <div>
             <h1>Dashboard</h1>
             <section className='children'>
             <h3>Children:</h3>
-            {children === '' || [] || undefined && (<div><h3>No Children Added.</h3><p>Add Your Child to Begin.</p></div>)}
+            <div className='child-cards'>
+            {!children || children === [] || children === undefined ? (<div><h3>No Children Added.</h3><p>Add Your Child to Begin.</p></div>) : children.map(child => {
+               return <div key={child.child_id}> <ChildCard info={child} /> </div>} ) }
            <button>+ Add Child</button>
-           {children && (children.forEach(child => {
-               return <div key={child.child_id}> <ChildCard info={child} /> </div>} ))}
+            
+               </div>
             </section>
             <section>
                 
