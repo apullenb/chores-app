@@ -8,10 +8,26 @@ import AddChild from './AddChild'
 import ChildCard from '../../components/ChildCard';
 
 function Dashboard(props) {
+    const [parent, setParent] = useState(false)
     const [children, setChildren]= useState(false)
     const [show, setShow] = useState('hide')
 
     console.log(children)
+    console.log(parent)
+
+    const getParentInfo = async () => {
+        try {
+            const token = localStorage.getItem("token");
+            const response = await fetch(`${config.API_ENDPOINT}/api/parent`, {
+              method: "GET",
+              headers: { "content-type": "application/json", token: `${token}` },
+            });
+            const parseRes = await response.json();
+            setParent(parseRes);
+          } catch (error) {
+            console.error(error.message);
+          }
+    }
     const  getChildren = async () => {
         try {
             const token = localStorage.getItem("token");
@@ -25,17 +41,16 @@ function Dashboard(props) {
             console.error(error.message);
           }
         }
-    const displayChildren = () => {
-
-    }
     
 useEffect(() => {
     getChildren()
+ getParentInfo()
 }, [])
 
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <div className='parent-dashboard'>
+           <h1>Hello {parent.parent_name}</h1>
+            <h2>DASHBOARD</h2>
             <section className='children'>
             <h3>Children:</h3>
             <div className='child-cards'>

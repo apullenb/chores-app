@@ -9,6 +9,8 @@ import Homepage from './routes/homepage/homePage'
 import "./App.css";
 import SuperAdminDash from './routes/SuperAdmin/SuperAdminDash'
 import ParentLogin from './routes/login/ParentLogin'
+import Header from './components/Header-Footer/Header';
+import Footer from './components/Header-Footer/Footer';
 
 
     function App (){
@@ -20,7 +22,7 @@ import ParentLogin from './routes/login/ParentLogin'
         };
 
         return (<div className="App" >
-
+          <Header />
             <Switch>
             <Route exact path="/login" render={(props) => !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth} />
@@ -56,7 +58,7 @@ import ParentLogin from './routes/login/ParentLogin'
             </Switch>
             
 
-
+              <Footer />
         </div>);
 }
 
