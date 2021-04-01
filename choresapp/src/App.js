@@ -29,6 +29,13 @@ import ParentLogin from './routes/login/ParentLogin'
                 )
               }
             />
+            <Route exact path="/parent-login" render={(props) => !isAuthenticated ? (
+                  <Login {...props} setAuth={setAuth} />
+                ) : (
+                  <Redirect to="/Dashboard" />
+                )
+              }
+            />
               <Route
               path="/signup"
               render={(props) =>
