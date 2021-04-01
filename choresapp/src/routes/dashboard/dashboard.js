@@ -5,9 +5,11 @@ import Button from '../../components/button/button';
 import { useDispatch } from 'react-redux'
 import config from '../../config'
 import AddChild from './AddChild'
+import ChildCard from '../../components/ChildCard';
 
 function Dashboard(props) {
     const [children, setChildren]= useState('')
+    const [show, setShow] = useState('hide')
 
     console.log(children)
     const  getChildren = async () => {
@@ -31,12 +33,18 @@ useEffect(() => {
     return (
         <div>
             <h1>Dashboard</h1>
+            <section className='children'>
             <h3>Children:</h3>
-           {children && (<section><p>Name: {children[0].full_name}</p>
-            <p>Age: {children[0].age}</p>
-            <p>Tokens: {children[0].tokens}</p>
-            </section>)}
+            {children === '' || [] || undefined && (<div><h3>No Children Added.</h3><p>Add Your Child to Begin.</p></div>)}
+           <button>+ Add Child</button>
+           {children && (children.forEach(child => {
+               return <div key={child.child_id}> <ChildCard info={child} /> </div>} ))}
+            </section>
+            <section>
+                
             <AddChild />
+            </section>
+            
         </div>
     )
 }
