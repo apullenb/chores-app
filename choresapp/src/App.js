@@ -23,6 +23,7 @@ import Footer from './components/Header-Footer/Footer';
 
         return (<div className="App" >
           <Header />
+          <div className='container'>
             <Switch>
             <Route exact path="/login" render={(props) => !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth} />
@@ -57,7 +58,7 @@ import Footer from './components/Header-Footer/Footer';
                 {/* <Route   component={props=><div> <h1>Page Not found</h1> </div>} /> */}
             </Switch>
             
-
+            </div>
               <Footer />
         </div>);
 }

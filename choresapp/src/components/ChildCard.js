@@ -1,4 +1,5 @@
 import React from 'react'
+import '../routes/dashboard/dashboard.css'
 
 function ChildCard(props) {
 const child = props.info

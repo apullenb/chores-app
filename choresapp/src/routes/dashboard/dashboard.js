@@ -60,9 +60,8 @@ useEffect(() => {
             <div className='child-cards'>
             {!children || children === [] || children === undefined ? (<div><h3>No Children Added.</h3><p>Add Your Child to Begin.</p></div>) : children.map(child => {
                return <div key={child.child_id}> <ChildCard info={child} /> </div>} ) }
-           <button>+ Add Child</button>
-            
-               </div>
+           </div>
+           <button>+ Add Child</button>  
             </section>
             <section>
                 

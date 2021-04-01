@@ -10,3 +10,8 @@
     font-size: 55px;
     font-weight: 700;
 }
+
+.footer {
+    background-color: var(--purple);
+    padding: 10px;
+}

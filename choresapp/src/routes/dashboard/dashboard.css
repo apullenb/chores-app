@@ -1,25 +1,65 @@
 
 .parent-dashboard {
-    margin: 1px 6%;
+    font-family: var(--funFont);
 }
 
 .parent-dashboard h1 {
     color: var(--purple);
     font-family: var(--funFont);
     font-size: 45px;
+    font-weight: 600;
+    margin: 0px;
    
 }
 .parent-dashboard h2 {
     font-family: var(--funFont);
-    font-size: 35px;
-    font-weight: 900;
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(58, 57, 58);
+    margin: 0;
 }
 
 .top {
     display: flex;
     flex-direction: row;
     border-bottom: 3px solid var(--yellow);
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    padding: 2px;
+    padding: 10px 5px;
+    margin: 5px 3px;
+}
+.child-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.child-card {
+    border: 1px solid rgb(236, 236, 236);
+    padding: 0;
+}
+
+.name {
+    margin: 0;
+    padding: 5px 3px;
+    background-color: var(--purple);
+}
+
+.child-card h3 {
+    color: whitesmoke;
+    padding: 5px 6px;
+    font-size: 20px;
+    margin: 0px;
+}
+.info {
+    font-size: 16px;
+    padding: 10px 0px;
+    margin: 5px 35px;
+}
+.info p {
+     /* margin: 5px 5px; */
+    padding: 1px 52px; 
+    border-bottom: 1px solid rgb(216, 215, 215);
 }

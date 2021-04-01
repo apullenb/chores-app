@@ -1,6 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 :root {
-    --funFont: 'Bellota Text';
+    --funFont: 'Comfortaa';
     --purple: #6b036e;
     --yellow: rgb(255, 230, 0)
+}
+
+.container {
+    margin: 0px 4%;
+    border: 1px solid rgba(128, 128, 128, 0.233);
+    padding: 10px;
 }
