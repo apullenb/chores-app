@@ -51,6 +51,9 @@ function AddChild(props) {
             <p>Child's Age: <input type='text' name='age' value={age}  onChange={(e) => onChange(e)} /></p>
             <p>Child's Gender: <input type='text' name='gender' value={gender}  onChange={(e) => onChange(e)} /></p>
             <button onClick={handleSubmit}>Submit</button>
+           <div>
+             <p><button onClick={props.display}> x Cancel</button></p>
+             </div> 
         </div>
     )
 }

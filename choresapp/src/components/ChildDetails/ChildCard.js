@@ -1,5 +1,5 @@
 import React from 'react'
-import '../routes/dashboard/dashboard.css'
+import '../../routes/dashboard/dashboard.css'
 
 function ChildCard(props) {
 const child = props.info
@@ -11,7 +11,7 @@ const child = props.info
                 <p>Age: {child.age}</p>
                 <p>Username: {child.username}</p>
                 <p>Tokens: {child.tokens}</p>
-
+        <button>View Child</button>
             </section>
         </div>
     )

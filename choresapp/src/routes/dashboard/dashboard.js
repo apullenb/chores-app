@@ -5,7 +5,7 @@ import Button from '../../components/button/button';
 import { useDispatch } from 'react-redux'
 import config from '../../config'
 import AddChild from './AddChild'
-import ChildCard from '../../components/ChildCard';
+import ChildCard from '../../components/ChildDetails/ChildCard';
 import './dashboard.css'
 
 function Dashboard(props) {
