@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import config from '../../config'
 
-function AddChild() {
+function AddChild(props) {
     const [inputs, setInputs] = useState({
         full_name: "",
         username: "",
@@ -32,6 +32,7 @@ function AddChild() {
             alert(parseRes.error);
             console.error(parseRes.error);
           } else {
+            props.display()
               setInputs({ full_name: "",
               username: "",
               user_type:'child',

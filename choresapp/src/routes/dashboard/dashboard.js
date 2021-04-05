@@ -42,7 +42,9 @@ function Dashboard(props) {
             console.error(error.message);
           }
         }
-    
+    const display = () => {
+        show === 'hide' ? setShow('add-child') : setShow('hide')
+    }
 useEffect(() => {
     getChildren()
  getParentInfo()
@@ -61,11 +63,11 @@ useEffect(() => {
             {!children || children === [] || children === undefined ? (<div><h3>No Children Added.</h3><p>Add Your Child to Begin.</p></div>) : children.map(child => {
                return <div key={child.child_id}> <ChildCard info={child} /> </div>} ) }
            </div>
-           <button>+ Add Child</button>  
+           <button onClick={display}>+ Add Child</button>  
             </section>
-            <section>
+            <section className={show}>
                 
-            <AddChild />
+            <AddChild display={display}/>
             </section>
             
         </div>
