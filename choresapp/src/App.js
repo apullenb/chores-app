@@ -33,7 +33,7 @@ import Footer from './components/Header-Footer/Footer';
               }
             />
             <Route exact path="/parent-login" render={(props) => !isAuthenticated ? (
-                  <Login {...props} setAuth={setAuth} />
+                 <ParentLogin {...props} setAuth={setAuth}/>
                 ) : (
                   <Redirect to="/Dashboard" />
                 )
@@ -54,7 +54,7 @@ import Footer from './components/Header-Footer/Footer';
                 <Route exact path='/dashboard' component={props => <Dashboard {...props} />} />
                 <Route exact path='/homepage' component={props => <Homepage {...props} />} />
                 <Route exact path='/superAdminDash' component={props => <SuperAdminDash {...props} />} />
-                <Route exact path="/parent-login" component={props => <ParentLogin {...props} setAuth={setAuth}/>} />
+               
                 {/* <Route   component={props=><div> <h1>Page Not found</h1> </div>} /> */}
             </Switch>
             
