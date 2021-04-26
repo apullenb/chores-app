@@ -11,6 +11,7 @@ import SuperAdminDash from './routes/SuperAdmin/SuperAdminDash'
 import ParentLogin from './routes/login/ParentLogin'
 import Header from './components/Header-Footer/Header';
 import Footer from './components/Header-Footer/Footer';
+import ViewChild from './components/ChildDetails/ViewChild';
 
 
     function App (){
@@ -54,7 +55,7 @@ import Footer from './components/Header-Footer/Footer';
                 <Route exact path='/dashboard' component={props => <Dashboard {...props} />} />
                 <Route exact path='/homepage' component={props => <Homepage {...props} />} />
                 <Route exact path='/superAdminDash' component={props => <SuperAdminDash {...props} />} />
-               
+                <Route path="/view-child/:childId" component={ViewChild} />
                 {/* <Route   component={props=><div> <h1>Page Not found</h1> </div>} /> */}
             </Switch>
             

@@ -1,5 +1,7 @@
 import React from 'react'
 import '../../routes/dashboard/dashboard.css'
+import { Link } from "react-router-dom";
+
 
 function ChildCard(props) {
 const child = props.info
@@ -11,9 +13,11 @@ const child = props.info
                 <p>Age: {child.age}</p>
                 <p>Username: {child.username}</p>
                 <p>Tokens: {child.tokens}</p>
-        <button>View Child</button>
+                <Link
+          to={{ pathname: `/view-child/${child.child_id}`, state: child }}
+        ><button>View Child</button></Link>
             </section>
-        </div>
+        </div> 
     )
 }
 
